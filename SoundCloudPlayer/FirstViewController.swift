@@ -102,9 +102,9 @@ class FirstViewController: UIViewController {
   }
 
   @IBAction func handlePanGesture(sender: UIPanGestureRecognizer!) {
-    var translation = sender.translationInView(waveformView)
+    var translation = sender.translationInView(self.view)
     
-    waveformView.translation = translation.x
+    waveformView.currentPlayHead += translation.x
   }
   
 }

@@ -17,6 +17,7 @@ public class WaveformView: UIView {
   private var topWaveformLayer: CAShapeLayer!
   private var bottomWaveformLayer: CAShapeLayer!
   private var topTintLayer: CAShapeLayer!
+  private var bottomTintLayer: CAShapeLayer!
   private var topWaveform: UIBezierPath! = UIBezierPath()
   private var bottomWaveform: UIBezierPath! = UIBezierPath()
 
@@ -40,13 +41,8 @@ public class WaveformView: UIView {
   }
   
   @IBInspectable
-  public var percentagePlayed: Double = 0.0 {
-    didSet { updateLayerProperties() }
-  }
-  
-  @IBInspectable
-  public var translation: CGFloat = 1.0 {
-    didSet { updateTranslation() }
+  public var currentPlayHead: CGFloat = 0.0 {
+    didSet { updatePlayHead() }
   }
 
   override public func layoutSubviews() {
@@ -55,6 +51,8 @@ public class WaveformView: UIView {
     if !containerWaveformLayer {
       containerWaveformLayer = CAShapeLayer()
       layer.addSublayer(containerWaveformLayer)
+      containerWaveformLayer.frame = layer.bounds
+      layer.masksToBounds = true
     }
     
     if !topWaveformLayer {
@@ -67,20 +65,25 @@ public class WaveformView: UIView {
       containerWaveformLayer.addSublayer(bottomWaveformLayer);
     }
 
-    if (!topTintLayer) {
+    if !topTintLayer {
       topTintLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(topTintLayer)
       topTintLayer.masksToBounds = true
     }
     
-    containerWaveformLayer.frame = layer.bounds
+    if !bottomTintLayer {
+      bottomTintLayer = CAShapeLayer()
+      containerWaveformLayer.addSublayer(bottomTintLayer)
+      bottomTintLayer.masksToBounds = true
+    }
+    
     topWaveformLayer.frame = containerWaveformLayer.bounds;
     bottomWaveformLayer.frame = containerWaveformLayer.bounds;
     updateLayerProperties()
   }
   
   func updateLayerProperties() {
-    currentTranslateX = waveformLength * CGFloat(percentagePlayed)
+    currentTranslateX = currentPlayHead
     if topWaveformLayer {
       topWaveformLayer.path = topWaveform.CGPath
       topWaveformLayer.fillColor = topWaveformColor.CGColor
@@ -91,22 +94,37 @@ public class WaveformView: UIView {
     }
 
     if topTintLayer {
-      let newFrame = CGRect(x: 0.0, y: 0.0, width: currentTranslateX, height: containerWaveformLayer.bounds.height)
-      topTintLayer.frame = newFrame
+      let tintFrame = CGRect(x: 0.0, y: 0.0, width: currentTranslateX, height: containerWaveformLayer.bounds.height)
+
+      topTintLayer.frame = tintFrame
       topTintLayer.path = topWaveform.CGPath
       topTintLayer.fillColor = topTintColor.CGColor
     }
-    if (containerWaveformLayer) {
+    
+    if bottomTintLayer {
+      let tintFrame = CGRect(x: 0.0, y: 0.0, width: currentTranslateX, height: containerWaveformLayer.bounds.height)
+
+      bottomTintLayer.frame = tintFrame
+      bottomTintLayer.path = bottomWaveform.CGPath
+      bottomTintLayer.fillColor = topTintColor.CGColor
+    }
+    
+    if containerWaveformLayer {
       let midPoint:CGFloat = layer.bounds.width / 2.0
-      containerWaveformLayer.transform = CATransform3DMakeTranslation(midPoint - currentTranslateX, 0.0, 0.0)
+      let containerFrame = CGRect(x: midPoint - currentTranslateX, y: 0, width: layer.bounds.width, height: layer.bounds.height)
+      containerWaveformLayer.frame = containerFrame
+//      containerWaveformLayer.transform = CATransform3DMakeTranslation(midPoint - currentTranslateX, 0.0, 0.0)
     }
   }
   
-  func updateTranslation() {
-    if (translation > 0 && waveformLength != 0) {
-      percentagePlayed = Double(translation / waveformLength)
-      updateLayerProperties()
+  func updatePlayHead() {
+    if currentPlayHead < 0.0 {
+      currentPlayHead = 0.0
+    } else if currentPlayHead > waveformLength {
+      currentPlayHead = waveformLength
     }
+    updateLayerProperties()
+    setNeedsLayout();
   }
   
   func updatePaths() {

@@ -21,12 +21,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items/>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Hello !" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K0d-H5-L6L">
-                                <rect key="frame" x="276" y="169" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XDE-RR-eX9" customClass="WaveformView" customModule="SoundCloudViews">
                                 <rect key="frame" x="36" y="264" width="528" height="256"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,24 +28,30 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="translation">
                                         <real key="value" value="100"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="percentagePlayed">
-                                        <real key="value" value="0.20000000000000001"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="topWaveformColor">
+                                        <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="currentPlayHead">
+                                        <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-4F-Rdu">
+                                <rect key="frame" x="279" y="150" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="8qp-4k-ywN"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="9hT-Pl-9vo"/>
-                            <constraint firstItem="XDE-RR-eX9" firstAttribute="top" secondItem="K0d-H5-L6L" secondAttribute="bottom" constant="74" id="CdJ-0I-pVg"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="GCv-eZ-Lr1"/>
-                            <constraint firstItem="K0d-H5-L6L" firstAttribute="top" secondItem="iQr-d4-Ar2" secondAttribute="bottom" constant="125" id="Sl7-aA-OsE"/>
                             <constraint firstItem="XDE-RR-eX9" firstAttribute="top" secondItem="iQr-d4-Ar2" secondAttribute="bottom" constant="220" id="UWj-Jn-2WO"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="XDE-RR-eX9" secondAttribute="bottom" constant="31" id="kPb-rR-mxY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XDE-RR-eX9" secondAttribute="trailing" constant="20" id="nze-Rx-MRN"/>
                             <constraint firstItem="XDE-RR-eX9" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="20" id="u4y-W2-yZH"/>
-                            <constraint firstAttribute="centerY" secondItem="K0d-H5-L6L" secondAttribute="centerY" constant="120" id="vQq-fy-Fy7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
