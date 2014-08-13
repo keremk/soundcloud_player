@@ -17,9 +17,23 @@ public class WaveformView: UIView {
   private var topWaveformLayer: CAShapeLayer!
   private var bottomWaveformLayer: CAShapeLayer!
   private var topTintLayer: CAShapeLayer!
+  private var topWaveform: UIBezierPath! = UIBezierPath()
+  private var bottomWaveform: UIBezierPath! = UIBezierPath()
 
-  public var amplitudes: [Double] = []
+  public var amplitudes: [Double] = [] {
+    didSet { updatePaths() }
+  }
   
+  @IBInspectable
+  public var topWaveformColor:UIColor = UIColor.lightGrayColor() {
+    didSet { updateLayerProperties() }
+  }
+
+  @IBInspectable
+  public var bottomWaveformColor:UIColor = UIColor.lightGrayColor() {
+    didSet { updateLayerProperties() }
+  }
+
   @IBInspectable
   public var topTintColor:UIColor = UIColor.redColor() {
     didSet { updateLayerProperties() }
@@ -28,6 +42,11 @@ public class WaveformView: UIView {
   @IBInspectable
   public var percentagePlayed: Double = 0.0 {
     didSet { updateLayerProperties() }
+  }
+  
+  @IBInspectable
+  public var translation: CGFloat = 1.0 {
+    didSet { updateTranslation() }
   }
 
   override public func layoutSubviews() {
@@ -41,31 +60,16 @@ public class WaveformView: UIView {
     if !topWaveformLayer {
       topWaveformLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(topWaveformLayer)
-      
-      let startPoint = CGPoint(x: 0.0, y: layer.bounds.height / 2.0)
-      let path = createGraph(startPoint, maxAmplitude: -60.0)
-      topWaveformLayer.path = path.CGPath
-      topWaveformLayer.fillColor = UIColor.grayColor().CGColor
     }
 
     if !bottomWaveformLayer {
       bottomWaveformLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(bottomWaveformLayer);
-      
-      let startPoint = CGPoint(x: 0.0, y: layer.bounds.height / 2.0)
-      let path = createGraph(startPoint, maxAmplitude: 30.0)
-      bottomWaveformLayer.path = path.CGPath
-      bottomWaveformLayer.fillColor = UIColor(red: 0.5, green: 0.0, blue: 0.0, alpha: 1.0).CGColor
     }
 
     if (!topTintLayer) {
       topTintLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(topTintLayer)
-
-      let startPoint = CGPoint(x: 0.0, y: layer.bounds.height / 2.0)
-      let path = createGraph(startPoint, maxAmplitude: -60.0)
-      topTintLayer.path = path.CGPath
-      topTintLayer.fillColor = topTintColor.CGColor
       topTintLayer.masksToBounds = true
     }
     
@@ -77,15 +81,39 @@ public class WaveformView: UIView {
   
   func updateLayerProperties() {
     currentTranslateX = waveformLength * CGFloat(percentagePlayed)
+    if topWaveformLayer {
+      topWaveformLayer.path = topWaveform.CGPath
+      topWaveformLayer.fillColor = topWaveformColor.CGColor
+    }
+    if bottomWaveformLayer {
+      bottomWaveformLayer.path = bottomWaveform.CGPath
+      bottomWaveformLayer.fillColor = bottomWaveformColor.CGColor
+    }
+
     if topTintLayer {
       let newFrame = CGRect(x: 0.0, y: 0.0, width: currentTranslateX, height: containerWaveformLayer.bounds.height)
       topTintLayer.frame = newFrame
+      topTintLayer.path = topWaveform.CGPath
       topTintLayer.fillColor = topTintColor.CGColor
     }
     if (containerWaveformLayer) {
       let midPoint:CGFloat = layer.bounds.width / 2.0
       containerWaveformLayer.transform = CATransform3DMakeTranslation(midPoint - currentTranslateX, 0.0, 0.0)
     }
+  }
+  
+  func updateTranslation() {
+    if (translation > 0 && waveformLength != 0) {
+      percentagePlayed = Double(translation / waveformLength)
+      updateLayerProperties()
+    }
+  }
+  
+  func updatePaths() {
+    let startPoint = CGPoint(x: 0.0, y: layer.bounds.height / 2.0)
+    topWaveform = createGraph(startPoint, maxAmplitude: -60.0)
+    bottomWaveform = createGraph(startPoint, maxAmplitude: 30.0)
+    updateLayerProperties()
   }
   
   func createGraph(startPoint: CGPoint, maxAmplitude: CGFloat) -> UIBezierPath {
