@@ -10,26 +10,27 @@ import QuartzCore
 import UIKit
 
 @IBDesignable
-class WaveformView: UIView {
-  var containerWaveformLayer: CAShapeLayer!
-  var topWaveformLayer: CAShapeLayer!
-  var bottomWaveformLayer: CAShapeLayer!
-  var topTintLayer: CAShapeLayer!
-  var amplitudes: [Double] = []
+public class WaveformView: UIView {
   private var waveformLength:CGFloat = 0.0
   private var currentTranslateX:CGFloat = 0.0
+  private var containerWaveformLayer: CAShapeLayer!
+  private var topWaveformLayer: CAShapeLayer!
+  private var bottomWaveformLayer: CAShapeLayer!
+  private var topTintLayer: CAShapeLayer!
 
+  public var amplitudes: [Double] = []
+  
   @IBInspectable
-  var topTintColor:UIColor = UIColor.redColor() {
+  public var topTintColor:UIColor = UIColor.redColor() {
     didSet { updateLayerProperties() }
   }
   
   @IBInspectable
-  var percentagePlayed: Double = 0.0 {
+  public var percentagePlayed: Double = 0.0 {
     didSet { updateLayerProperties() }
   }
 
-  override func layoutSubviews() {
+  override public func layoutSubviews() {
     super.layoutSubviews()
     
     if !containerWaveformLayer {
@@ -114,7 +115,7 @@ class WaveformView: UIView {
     return projectPath
   }
 
-  override func prepareForInterfaceBuilder() {
+  override public func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
 
     var path = projectPath();
