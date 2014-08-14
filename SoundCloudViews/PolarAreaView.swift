@@ -26,7 +26,19 @@ public class PolarAreaView: UIView {
     didSet { updateLayerProperties() }
   }
   
+  @IBInspectable
+  public var highlightedColor: UIColor = UIColor.orangeColor() {
+    didSet { updateLayerProperties() }
+  }
+
+  
+  @IBInspectable
+  public var cutOffAngle: CGFloat = CGFloat(M_PI_4) {
+    didSet { updateLayerProperties() }
+  }
+  
   private var polarAreaLayer: CAShapeLayer!
+  private var highlightedPolarLayer: CAShapeLayer!
 
   
   override public func layoutSubviews() {
@@ -39,27 +51,43 @@ public class PolarAreaView: UIView {
       layer.masksToBounds = true
     }
     
+    if !highlightedPolarLayer {
+      highlightedPolarLayer = CAShapeLayer()
+      layer.addSublayer(highlightedPolarLayer)
+      highlightedPolarLayer.frame = layer.bounds
+    }
+    
     updateLayerProperties()
   }
 
   func updateLayerProperties() {
     if polarAreaLayer {
-      polarAreaLayer.path = createAllSlices(bounds).CGPath
+      polarAreaLayer.path = createAllSlices(bounds, cutOffAngle: CGFloat(2.0*M_PI)).CGPath
       polarAreaLayer.fillColor = nonHighlightedColor.CGColor
 //      polarAreaLayer.strokeColor = UIColor.blackColor().CGColor
     }
+    
+    if highlightedPolarLayer {
+      highlightedPolarLayer.path = createAllSlices(bounds, cutOffAngle: CGFloat(cutOffAngle)).CGPath
+      highlightedPolarLayer.fillColor = highlightedColor.CGColor
+    }
   }
   
-  func createAllSlices(boundsRect: CGRect) -> UIBezierPath {
-    var startAngle: CGFloat = CGFloat(-M_PI / 2.0)
+  func createAllSlices(boundsRect: CGRect, cutOffAngle: CGFloat) -> UIBezierPath {
+    var startAngle: CGFloat = CGFloat(0.0)
     var endAngle: CGFloat
     let sliceAngle: CGFloat = CGFloat(2.0 * M_PI / Double(radii.count))
     let center:CGPoint = CGPoint(x: boundsRect.midX, y: boundsRect.midY)
     
     var fullPath = UIBezierPath()
+    var shouldBreak = false
     for radius in radii {
       let adjustedRadius = CGFloat(radius * max(Double(boundsRect.width), Double(boundsRect.height)) / 2.0)
       endAngle = startAngle + sliceAngle
+      if endAngle > cutOffAngle {
+        endAngle = cutOffAngle
+        shouldBreak = true
+      }
       let translateX = center.x + innerRadius * cos(startAngle + sliceAngle / 2.0)
       let translateY = center.y + innerRadius * sin(startAngle + sliceAngle / 2.0)
       let adjustedCenter = CGPoint(x: translateX, y: translateY)
@@ -68,6 +96,9 @@ public class PolarAreaView: UIView {
       
       fullPath.appendPath(slicePath)
       startAngle = endAngle
+      if shouldBreak {
+        break
+      }
     }
     return fullPath
   }
