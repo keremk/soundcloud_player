@@ -17,6 +17,11 @@ public extension NSTimeInterval {
     residue = residue % 60
     let seconds = Int(residue)
     
+    var extraHourZero = ""
+    if hours < 10 {
+      extraHourZero = "0"
+    }
+    
     var extraMinuteZero = ""
     if minutes < 10 {
       extraMinuteZero = "0"
@@ -26,7 +31,7 @@ public extension NSTimeInterval {
       extraSecondZero = "0"
     }
     
-    let timeInterval = "\(hours):\(extraMinuteZero)\(minutes):\(extraSecondZero)\(seconds)"
+    let timeInterval = "\(extraHourZero)\(hours):\(extraMinuteZero)\(minutes):\(extraSecondZero)\(seconds)"
     
     return timeInterval
   }
