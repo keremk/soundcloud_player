@@ -20,6 +20,7 @@
 		BDAC5D321997DBC400535C95 /* SoundCloudViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BDAC5D1D1997DBC300535C95 /* SoundCloudViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BDAC5D3D1997E77700535C95 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5D3C1997E77700535C95 /* WaveformView.swift */; };
 		BDB24707199D004E00A806F0 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB24706199D004E00A806F0 /* utils.swift */; };
+		BDB24709199D1BD700A806F0 /* PolarAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB24708199D1BD700A806F0 /* PolarAreaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		BDAC5D2D1997DBC400535C95 /* SoundCloudViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCloudViewsTests.swift; sourceTree = "<group>"; };
 		BDAC5D3C1997E77700535C95 /* WaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		BDB24706199D004E00A806F0 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
+		BDB24708199D1BD700A806F0 /* PolarAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarAreaView.swift; sourceTree = "<group>"; };
 		E94EC1CEAB9846C8B5C1E5F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -201,6 +203,7 @@
 				BDAC5D1F1997DBC400535C95 /* Supporting Files */,
 				BDAC5D3C1997E77700535C95 /* WaveformView.swift */,
 				BDB24706199D004E00A806F0 /* utils.swift */,
+				BDB24708199D1BD700A806F0 /* PolarAreaView.swift */,
 			);
 			path = SoundCloudViews;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 			files = (
 				BDAC5D3D1997E77700535C95 /* WaveformView.swift in Sources */,
 				BDB24707199D004E00A806F0 /* utils.swift in Sources */,
+				BDB24709199D1BD700A806F0 /* PolarAreaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
