@@ -36,10 +36,9 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-4F-Rdu">
-                                <rect key="frame" x="279" y="150" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-4F-Rdu">
+                                <rect key="frame" x="260" y="148" width="81" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -48,14 +47,17 @@
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="8qp-4k-ywN"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="9hT-Pl-9vo"/>
                             <constraint firstItem="iQr-d4-Ar2" firstAttribute="trailing" secondItem="tsR-hK-woN" secondAttribute="trailing" id="GCv-eZ-Lr1"/>
+                            <constraint firstAttribute="centerX" secondItem="wxa-4F-Rdu" secondAttribute="centerX" id="SoH-kq-gH7"/>
                             <constraint firstItem="XDE-RR-eX9" firstAttribute="top" secondItem="iQr-d4-Ar2" secondAttribute="bottom" constant="220" id="UWj-Jn-2WO"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="XDE-RR-eX9" secondAttribute="bottom" constant="31" id="kPb-rR-mxY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XDE-RR-eX9" secondAttribute="trailing" constant="20" id="nze-Rx-MRN"/>
+                            <constraint firstAttribute="centerY" secondItem="wxa-4F-Rdu" secondAttribute="centerY" constant="139.5" id="qL6-Py-eI5"/>
                             <constraint firstItem="XDE-RR-eX9" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="20" id="u4y-W2-yZH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="timeLabel" destination="wxa-4F-Rdu" id="s77-u0-NDD"/>
                         <outlet property="waveformView" destination="XDE-RR-eX9" id="ru4-55-Icj"/>
                     </connections>
                 </viewController>

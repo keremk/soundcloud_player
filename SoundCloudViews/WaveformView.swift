@@ -21,6 +21,19 @@ public class WaveformView: UIView {
   private var topWaveform: UIBezierPath! = UIBezierPath()
   private var bottomWaveform: UIBezierPath! = UIBezierPath()
 
+  public var totalTime: NSTimeInterval = 0
+  
+  public var timeElapsed: NSTimeInterval {
+    get {
+      var timeElapsed:NSTimeInterval = 0.0
+      if (waveformLength > 0) {
+        timeElapsed = totalTime * Double(currentPlayHead / waveformLength)
+      } 
+      return timeElapsed
+    }
+    
+  }
+  
   public var amplitudes: [Double] = [] {
     didSet { updatePaths() }
   }

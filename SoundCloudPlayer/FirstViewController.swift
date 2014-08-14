@@ -12,6 +12,7 @@ import SoundCloudViews
 class FirstViewController: UIViewController {
                             
   @IBOutlet weak var waveformView: WaveformView!
+  @IBOutlet weak var timeLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -20,6 +21,7 @@ class FirstViewController: UIViewController {
     var gestureRecognizer:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
     waveformView.userInteractionEnabled = true
     waveformView.addGestureRecognizer(gestureRecognizer)
+    waveformView.totalTime = 5400
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -105,6 +107,8 @@ class FirstViewController: UIViewController {
     var translation = sender.translationInView(self.view)
     
     waveformView.currentPlayHead += translation.x
+    
+    timeLabel.text = waveformView.timeElapsed.formatAsTimeString()
   }
   
 }
