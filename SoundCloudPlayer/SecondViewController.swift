@@ -15,6 +15,11 @@ class SecondViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
+    
+    var gestureRecognizer:OneFingerRotationGestureRecognizer = OneFingerRotationGestureRecognizer(target: self, action: Selector("handleRotationGesture:"))
+    polarAreaView.addGestureRecognizer(gestureRecognizer)
+    polarAreaView.userInteractionEnabled = true
+    
   }
 
   override func viewWillAppear(animated: Bool) {
@@ -96,6 +101,16 @@ class SecondViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+  @IBAction func handleRotationGesture(sender: OneFingerRotationGestureRecognizer!) {
+    let recognizer = sender as OneFingerRotationGestureRecognizer
+    var currentAngle:CGFloat = polarAreaView.highlightAngle
+    var newAngle:CGFloat = currentAngle + CGFloat(recognizer.rotationAngle)
+    if newAngle <= CGFloat(2*M_PI) && newAngle >= 0 {
+      polarAreaView.highlightAngle = newAngle
+      println("Cutoff Angle:\(newAngle)")
+    }
+  }
+  
   
 }
 

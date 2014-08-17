@@ -21,6 +21,7 @@
 		BDAC5D3D1997E77700535C95 /* WaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5D3C1997E77700535C95 /* WaveformView.swift */; };
 		BDB24707199D004E00A806F0 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB24706199D004E00A806F0 /* utils.swift */; };
 		BDB24709199D1BD700A806F0 /* PolarAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB24708199D1BD700A806F0 /* PolarAreaView.swift */; };
+		BDFA3B1F19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		BDAC5D3C1997E77700535C95 /* WaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveformView.swift; sourceTree = "<group>"; };
 		BDB24706199D004E00A806F0 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		BDB24708199D1BD700A806F0 /* PolarAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarAreaView.swift; sourceTree = "<group>"; };
+		BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneFingerRotationGestureRecognizer.swift; sourceTree = "<group>"; };
 		E94EC1CEAB9846C8B5C1E5F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -204,6 +206,7 @@
 				BDAC5D3C1997E77700535C95 /* WaveformView.swift */,
 				BDB24706199D004E00A806F0 /* utils.swift */,
 				BDB24708199D1BD700A806F0 /* PolarAreaView.swift */,
+				BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */,
 			);
 			path = SoundCloudViews;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				BDAC5D3D1997E77700535C95 /* WaveformView.swift in Sources */,
 				BDB24707199D004E00A806F0 /* utils.swift in Sources */,
 				BDB24709199D1BD700A806F0 /* PolarAreaView.swift in Sources */,
+				BDFA3B1F19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

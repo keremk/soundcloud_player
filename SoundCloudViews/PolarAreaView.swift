@@ -18,7 +18,11 @@ public class PolarAreaView: UIView {
   
   @IBInspectable
   public var radii: [Double] = [] {
-    didSet { updateLayerProperties() }
+    didSet {
+      polarAreaPath = calculatePolarAreaPath()
+      maskPath = calculateMaskPath()
+      updateLayerProperties()
+    }
   }
   
   @IBInspectable
@@ -30,19 +34,32 @@ public class PolarAreaView: UIView {
   public var highlightedColor: UIColor = UIColor.orangeColor() {
     didSet { updateLayerProperties() }
   }
-
   
   @IBInspectable
-  public var cutOffAngle: CGFloat = CGFloat(M_PI_4) {
-    didSet { updateLayerProperties() }
+  public var highlightAngle: CGFloat = 0.0 {
+    didSet {
+      maskPath = calculateMaskPath()
+      updateLayerProperties()
+    }
   }
   
   private var polarAreaLayer: CAShapeLayer!
   private var highlightedPolarLayer: CAShapeLayer!
-
+  private var maskLayer: CAShapeLayer!
+  
+  private var polarAreaPath: UIBezierPath!
+  private var maskPath: UIBezierPath!
   
   override public func layoutSubviews() {
     super.layoutSubviews()
+
+    if !polarAreaPath {
+      polarAreaPath = calculatePolarAreaPath()
+    }
+    
+    if !maskPath {
+      maskPath = calculateMaskPath()
+    }
 
     if !polarAreaLayer {
       polarAreaLayer = CAShapeLayer()
@@ -57,32 +74,53 @@ public class PolarAreaView: UIView {
       highlightedPolarLayer.frame = layer.bounds
     }
     
+    if !maskLayer {
+      maskLayer = CAShapeLayer()
+    }
+    
     updateLayerProperties()
   }
 
   func updateLayerProperties() {
     if polarAreaLayer {
-      polarAreaLayer.path = createAllSlices(bounds, cutOffAngle: CGFloat(2.0*M_PI)).CGPath
+      polarAreaLayer.path = polarAreaPath.CGPath
       polarAreaLayer.fillColor = nonHighlightedColor.CGColor
-//      polarAreaLayer.strokeColor = UIColor.blackColor().CGColor
     }
     
     if highlightedPolarLayer {
-      highlightedPolarLayer.path = createAllSlices(bounds, cutOffAngle: CGFloat(cutOffAngle)).CGPath
+      highlightedPolarLayer.path = polarAreaPath.CGPath
       highlightedPolarLayer.fillColor = highlightedColor.CGColor
+      maskLayer.path = maskPath.CGPath
+      highlightedPolarLayer.mask = maskLayer
     }
+  }
+
+  func calculatePolarAreaPath() -> UIBezierPath {
+    return createAllSlices(bounds, cutOffAngle: CGFloat(2.0*M_PI))
+  }
+  
+  func calculateMaskPath() -> UIBezierPath {
+    return createSlice(CGFloat(0.0), endAngle: CGFloat(highlightAngle), radius: CGFloat(maxDiameter(bounds) / 2.0), center: centerPoint(bounds))
+  }
+  
+  func maxDiameter(boundsRect: CGRect) -> Double {
+    return max(Double(boundsRect.width), Double(boundsRect.height))
+  }
+  
+  func centerPoint(boundsRect: CGRect) -> CGPoint {
+    return CGPoint(x: boundsRect.midX, y: boundsRect.midY)
   }
   
   func createAllSlices(boundsRect: CGRect, cutOffAngle: CGFloat) -> UIBezierPath {
     var startAngle: CGFloat = CGFloat(0.0)
     var endAngle: CGFloat
     let sliceAngle: CGFloat = CGFloat(2.0 * M_PI / Double(radii.count))
-    let center:CGPoint = CGPoint(x: boundsRect.midX, y: boundsRect.midY)
+    let center:CGPoint = centerPoint(boundsRect)
     
     var fullPath = UIBezierPath()
     var shouldBreak = false
     for radius in radii {
-      let adjustedRadius = CGFloat(radius * max(Double(boundsRect.width), Double(boundsRect.height)) / 2.0)
+      let adjustedRadius = CGFloat(radius * maxDiameter(boundsRect) / 2.0)
       endAngle = startAngle + sliceAngle
       if endAngle > cutOffAngle {
         endAngle = cutOffAngle

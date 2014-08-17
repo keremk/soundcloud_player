@@ -107,7 +107,6 @@ class FirstViewController: UIViewController {
     var translation = sender.translationInView(self.view)
     
     waveformView.currentPlayHead += translation.x
-    
     timeLabel.text = waveformView.timeElapsed.formatAsTimeString()
   }
   
