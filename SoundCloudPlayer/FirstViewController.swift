@@ -21,10 +21,10 @@ class FirstViewController: UIViewController {
     var gestureRecognizer:UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
     waveformView.userInteractionEnabled = true
     waveformView.addGestureRecognizer(gestureRecognizer)
-    waveformView.totalTime = 5400
   }
   
   override func viewWillAppear(animated: Bool) {
+    waveformView.totalTime = 5400
     waveformView.amplitudes = [0.32142857142857145,
       0.8285714285714286,
       0.8571428571428571,

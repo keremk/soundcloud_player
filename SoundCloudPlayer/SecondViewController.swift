@@ -12,6 +12,8 @@ import SoundCloudViews
 class SecondViewController: UIViewController {
                             
   @IBOutlet weak var polarAreaView: PolarAreaView!
+  @IBOutlet weak var timeLabel: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -19,10 +21,10 @@ class SecondViewController: UIViewController {
     var gestureRecognizer:OneFingerRotationGestureRecognizer = OneFingerRotationGestureRecognizer(target: self, action: Selector("handleRotationGesture:"))
     polarAreaView.addGestureRecognizer(gestureRecognizer)
     polarAreaView.userInteractionEnabled = true
-    
   }
 
   override func viewWillAppear(animated: Bool) {
+    polarAreaView.totalTime = 5400
     polarAreaView.radii = [0.32142857142857145,
       0.8285714285714286,
       0.8571428571428571,
@@ -107,7 +109,8 @@ class SecondViewController: UIViewController {
     var newAngle:CGFloat = currentAngle + CGFloat(recognizer.rotationAngle)
     if newAngle <= CGFloat(2*M_PI) && newAngle >= 0 {
       polarAreaView.highlightAngle = newAngle
-      println("Cutoff Angle:\(newAngle)")
+      println("Time Elapsed: \(polarAreaView.timeElapsed)")
+      timeLabel.text = polarAreaView.timeElapsed.formatAsTimeString()
     }
   }
   

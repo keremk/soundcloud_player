@@ -125,6 +125,7 @@
                     <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="polarAreaView" destination="231-aD-oKL" id="gql-JT-iyU"/>
+                        <outlet property="timeLabel" destination="zEq-FU-wV5" id="5r0-8m-dEN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

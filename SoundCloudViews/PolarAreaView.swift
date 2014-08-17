@@ -11,6 +11,14 @@ import UIKit
 
 @IBDesignable
 public class PolarAreaView: UIView {
+  public var totalTime: NSTimeInterval = 0
+  
+  public var timeElapsed: NSTimeInterval {
+    get {
+      return totalTime * (Double(highlightAngle) / (2*M_PI))
+    }
+  }
+  
   @IBInspectable
   public var innerRadius:CGFloat = 5.0 {
     didSet { updateLayerProperties() }
