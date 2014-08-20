@@ -22,6 +22,10 @@
 		BDB24707199D004E00A806F0 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB24706199D004E00A806F0 /* utils.swift */; };
 		BDB24709199D1BD700A806F0 /* PolarAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB24708199D1BD700A806F0 /* PolarAreaView.swift */; };
 		BDFA3B1F19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */; };
+		BDFA3B2219A0FF770027F794 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA3B2119A0FF770027F794 /* Alamofire.swift */; };
+		BDFA3B2519A12BC70027F794 /* SoundCloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA3B2419A12BC70027F794 /* SoundCloudClient.swift */; };
+		BDFA3B2719A13D850027F794 /* secret_keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDFA3B2619A13D850027F794 /* secret_keys.plist */; };
+		BDFA3B2919A1535A0027F794 /* SoundInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDFA3B2819A1535A0027F794 /* SoundInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +95,10 @@
 		BDB24706199D004E00A806F0 /* utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		BDB24708199D1BD700A806F0 /* PolarAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarAreaView.swift; sourceTree = "<group>"; };
 		BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneFingerRotationGestureRecognizer.swift; sourceTree = "<group>"; };
+		BDFA3B2119A0FF770027F794 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = alamofire/Source/Alamofire.swift; sourceTree = "<group>"; };
+		BDFA3B2419A12BC70027F794 /* SoundCloudClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudClient.swift; sourceTree = "<group>"; };
+		BDFA3B2619A13D850027F794 /* secret_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = secret_keys.plist; sourceTree = "<group>"; };
+		BDFA3B2819A1535A0027F794 /* SoundInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundInfo.swift; sourceTree = "<group>"; };
 		E94EC1CEAB9846C8B5C1E5F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -139,6 +147,7 @@
 		BDAC5CEB1996D6A500535C95 = {
 			isa = PBXGroup;
 			children = (
+				BDFA3B2019A0FF1E0027F794 /* AlamoFire */,
 				BDAC5CF61996D6A500535C95 /* SoundCloudPlayer */,
 				BDAC5D0B1996D6A500535C95 /* SoundCloudPlayerTests */,
 				BDAC5D1E1997DBC400535C95 /* SoundCloudViews */,
@@ -163,6 +172,7 @@
 		BDAC5CF61996D6A500535C95 /* SoundCloudPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				BDFA3B2319A129BC0027F794 /* models */,
 				BDAC5CF91996D6A500535C95 /* AppDelegate.swift */,
 				BDAC5CFB1996D6A500535C95 /* FirstViewController.swift */,
 				BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */,
@@ -177,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				BDAC5CF81996D6A500535C95 /* Info.plist */,
+				BDFA3B2619A13D850027F794 /* secret_keys.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -234,6 +245,23 @@
 				BDAC5D2C1997DBC400535C95 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BDFA3B2019A0FF1E0027F794 /* AlamoFire */ = {
+			isa = PBXGroup;
+			children = (
+				BDFA3B2119A0FF770027F794 /* Alamofire.swift */,
+			);
+			name = AlamoFire;
+			sourceTree = "<group>";
+		};
+		BDFA3B2319A129BC0027F794 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				BDFA3B2419A12BC70027F794 /* SoundCloudClient.swift */,
+				BDFA3B2819A1535A0027F794 /* SoundInfo.swift */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +407,7 @@
 			files = (
 				BDAC5D011996D6A500535C95 /* Main.storyboard in Resources */,
 				BDAC5D031996D6A500535C95 /* Images.xcassets in Resources */,
+				BDFA3B2719A13D850027F794 /* secret_keys.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,8 +473,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDAC5CFE1996D6A500535C95 /* SecondViewController.swift in Sources */,
+				BDFA3B2919A1535A0027F794 /* SoundInfo.swift in Sources */,
 				BDAC5CFA1996D6A500535C95 /* AppDelegate.swift in Sources */,
+				BDFA3B2219A0FF770027F794 /* Alamofire.swift in Sources */,
 				BDAC5CFC1996D6A500535C95 /* FirstViewController.swift in Sources */,
+				BDFA3B2519A12BC70027F794 /* SoundCloudClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

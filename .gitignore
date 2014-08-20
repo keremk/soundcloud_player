@@ -21,3 +21,6 @@ DerivedData
 
 # CocoaPods
 Pods
+
+# Secret Keys
+SoundCloudPlayer/secret_keys.plist

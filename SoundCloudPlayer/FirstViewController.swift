@@ -24,6 +24,19 @@ class FirstViewController: UIViewController {
   }
   
   override func viewWillAppear(animated: Bool) {
+    var client = SoundCloudClient.sharedInstance
+    client.retrieveSoundInfo("https://soundcloud.com/silentletters/swimming-lessons") {
+      (soundInfo, error) in
+        if let soundData = soundInfo {
+          client.retrieveArtworkUrl(soundData.waveformUrl!) {
+            (waveformData, error) in
+            if let data = waveformData {
+              self.waveformView.totalTime = NSTimeInterval(soundData.duration!)
+              self.waveformView.amplitudes = data
+            }
+          }
+        }
+    }
     waveformView.totalTime = 5400
     waveformView.amplitudes = [0.32142857142857145,
       0.8285714285714286,
