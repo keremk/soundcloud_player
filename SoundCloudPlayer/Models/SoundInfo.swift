@@ -17,12 +17,12 @@ class SoundInfo {
   var duration: Int?
   
   init(JSON: AnyObject!) {
-    trackId = JSON["id"] as Int
-    artworkUrl = JSON["artwork_url"] as String!
-    waveformUrl = JSON["waveform_url"] as String!
-    streamUrl = JSON["stream_url"] as String!
-    title = JSON["title"] as String!
-    duration = JSON["duration"] as Int!
+    trackId = JSON["id"] as! Int
+    artworkUrl = JSON["artwork_url"] as! String!
+    waveformUrl = JSON["waveform_url"] as! String!
+    streamUrl = JSON["stream_url"] as! String!
+    title = JSON["title"] as! String!
+    duration = JSON["duration"] as! Int!
   }
   
   func downloadWaveformData(completionHandler: (Array<Double>, NSError?) -> Void) -> Void {

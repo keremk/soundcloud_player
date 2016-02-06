@@ -61,30 +61,30 @@ public class WaveformView: UIView {
   override public func layoutSubviews() {
     super.layoutSubviews()
     
-    if !containerWaveformLayer {
+    if (containerWaveformLayer == nil) {
       containerWaveformLayer = CAShapeLayer()
       layer.addSublayer(containerWaveformLayer)
       containerWaveformLayer.frame = layer.bounds
       layer.masksToBounds = true
     }
     
-    if !topWaveformLayer {
+    if (topWaveformLayer == nil) {
       topWaveformLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(topWaveformLayer)
     }
 
-    if !bottomWaveformLayer {
+    if (bottomWaveformLayer == nil) {
       bottomWaveformLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(bottomWaveformLayer);
     }
 
-    if !topTintLayer {
+    if (topTintLayer == nil) {
       topTintLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(topTintLayer)
       topTintLayer.masksToBounds = true
     }
     
-    if !bottomTintLayer {
+    if (bottomTintLayer == nil) {
       bottomTintLayer = CAShapeLayer()
       containerWaveformLayer.addSublayer(bottomTintLayer)
       bottomTintLayer.masksToBounds = true
@@ -97,16 +97,16 @@ public class WaveformView: UIView {
   
   func updateLayerProperties() {
     currentTranslateX = currentPlayHead
-    if topWaveformLayer {
+    if (topWaveformLayer != nil) {
       topWaveformLayer.path = topWaveform.CGPath
       topWaveformLayer.fillColor = topWaveformColor.CGColor
     }
-    if bottomWaveformLayer {
+    if (bottomWaveformLayer != nil) {
       bottomWaveformLayer.path = bottomWaveform.CGPath
       bottomWaveformLayer.fillColor = bottomWaveformColor.CGColor
     }
 
-    if topTintLayer {
+    if (topTintLayer != nil) {
       let tintFrame = CGRect(x: 0.0, y: 0.0, width: currentTranslateX, height: containerWaveformLayer.bounds.height)
 
       topTintLayer.frame = tintFrame
@@ -114,7 +114,7 @@ public class WaveformView: UIView {
       topTintLayer.fillColor = topTintColor.CGColor
     }
     
-    if bottomTintLayer {
+    if (bottomTintLayer != nil) {
       let tintFrame = CGRect(x: 0.0, y: 0.0, width: currentTranslateX, height: containerWaveformLayer.bounds.height)
 
       bottomTintLayer.frame = tintFrame
@@ -122,7 +122,7 @@ public class WaveformView: UIView {
       bottomTintLayer.fillColor = topTintColor.CGColor
     }
     
-    if containerWaveformLayer {
+    if (containerWaveformLayer != nil) {
       let midPoint:CGFloat = layer.bounds.width / 2.0
       let containerFrame = CGRect(x: midPoint - currentTranslateX, y: 0, width: layer.bounds.width, height: layer.bounds.height)
       containerWaveformLayer.frame = containerFrame
@@ -148,7 +148,7 @@ public class WaveformView: UIView {
   }
   
   func createGraph(startPoint: CGPoint, maxAmplitude: CGFloat) -> UIBezierPath {
-    var path = UIBezierPath()
+    let path = UIBezierPath()
     let midY:CGFloat = startPoint.y
     var x:CGFloat = startPoint.x
     for amplitude in amplitudes {
@@ -177,7 +177,7 @@ public class WaveformView: UIView {
   override public func prepareForInterfaceBuilder() {
     super.prepareForInterfaceBuilder()
 
-    var path = projectPath();
+    _ = projectPath();
     
     amplitudes = [0.32142857142857145,
       0.8285714285714286,
