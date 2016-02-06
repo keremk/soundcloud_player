@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AF656881C663A9E0074D882 /* PureLayout in Resources */ = {isa = PBXBuildFile; fileRef = 2AF656871C663A9E0074D882 /* PureLayout */; };
 		BDAC5CFA1996D6A500535C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CF91996D6A500535C95 /* AppDelegate.swift */; };
 		BDAC5CFC1996D6A500535C95 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CFB1996D6A500535C95 /* FirstViewController.swift */; };
 		BDAC5CFE1996D6A500535C95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2AF656871C663A9E0074D882 /* PureLayout */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PureLayout; sourceTree = "<group>"; };
 		BDAC5CF41996D6A500535C95 /* SoundCloudPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDAC5CF81996D6A500535C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDAC5CF91996D6A500535C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,14 +131,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AF656861C663A840074D882 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2AF656871C663A9E0074D882 /* PureLayout */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
 		BDAC5CEB1996D6A500535C95 = {
 			isa = PBXGroup;
 			children = (
+				BDAC5CF51996D6A500535C95 /* Products */,
 				BDAC5CF61996D6A500535C95 /* SoundCloudPlayer */,
 				BDAC5D0B1996D6A500535C95 /* SoundCloudPlayerTests */,
-				BDAC5D1E1997DBC400535C95 /* SoundCloudViews */,
 				BDAC5D2A1997DBC400535C95 /* SoundCloudViewsTests */,
-				BDAC5CF51996D6A500535C95 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,13 +163,15 @@
 		BDAC5CF61996D6A500535C95 /* SoundCloudPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				BDFA3B2319A129BC0027F794 /* models */,
+				2AF656861C663A840074D882 /* Libraries */,
+				BDFA3B2319A129BC0027F794 /* Models */,
+				BDAC5CF71996D6A500535C95 /* Supporting Files */,
+				BDAC5D1E1997DBC400535C95 /* Views */,
 				BDAC5CF91996D6A500535C95 /* AppDelegate.swift */,
 				BDAC5CFB1996D6A500535C95 /* FirstViewController.swift */,
-				BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */,
-				BDAC5CFF1996D6A500535C95 /* Main.storyboard */,
 				BDAC5D021996D6A500535C95 /* Images.xcassets */,
-				BDAC5CF71996D6A500535C95 /* Supporting Files */,
+				BDAC5CFF1996D6A500535C95 /* Main.storyboard */,
+				BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */,
 			);
 			path = SoundCloudPlayer;
 			sourceTree = "<group>";
@@ -171,14 +182,14 @@
 				BDAC5CF81996D6A500535C95 /* Info.plist */,
 				BDFA3B2619A13D850027F794 /* secret_keys.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BDAC5D0B1996D6A500535C95 /* SoundCloudPlayerTests */ = {
 			isa = PBXGroup;
 			children = (
-				BDAC5D0E1996D6A500535C95 /* SoundCloudPlayerTests.swift */,
 				BDAC5D0C1996D6A500535C95 /* Supporting Files */,
+				BDAC5D0E1996D6A500535C95 /* SoundCloudPlayerTests.swift */,
 			);
 			path = SoundCloudPlayerTests;
 			sourceTree = "<group>";
@@ -188,20 +199,20 @@
 			children = (
 				BDAC5D0D1996D6A500535C95 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BDAC5D1E1997DBC400535C95 /* SoundCloudViews */ = {
+		BDAC5D1E1997DBC400535C95 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				BDAC5D211997DBC400535C95 /* SoundCloudViews.h */,
 				BDAC5D1F1997DBC400535C95 /* Supporting Files */,
+				BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */,
+				BDB24708199D1BD700A806F0 /* PolarAreaView.swift */,
+				BDAC5D211997DBC400535C95 /* SoundCloudViews.h */,
 				BDAC5D3C1997E77700535C95 /* WaveformView.swift */,
 				BDB24706199D004E00A806F0 /* utils.swift */,
-				BDB24708199D1BD700A806F0 /* PolarAreaView.swift */,
-				BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */,
 			);
-			path = SoundCloudViews;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BDAC5D1F1997DBC400535C95 /* Supporting Files */ = {
@@ -209,14 +220,14 @@
 			children = (
 				BDAC5D201997DBC400535C95 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BDAC5D2A1997DBC400535C95 /* SoundCloudViewsTests */ = {
 			isa = PBXGroup;
 			children = (
-				BDAC5D2D1997DBC400535C95 /* SoundCloudViewsTests.swift */,
 				BDAC5D2B1997DBC400535C95 /* Supporting Files */,
+				BDAC5D2D1997DBC400535C95 /* SoundCloudViewsTests.swift */,
 			);
 			path = SoundCloudViewsTests;
 			sourceTree = "<group>";
@@ -226,16 +237,16 @@
 			children = (
 				BDAC5D2C1997DBC400535C95 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BDFA3B2319A129BC0027F794 /* models */ = {
+		BDFA3B2319A129BC0027F794 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				BDFA3B2419A12BC70027F794 /* SoundCloudClient.swift */,
 				BDFA3B2819A1535A0027F794 /* SoundInfo.swift */,
 			);
-			name = models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AF656881C663A9E0074D882 /* PureLayout in Resources */,
 				BDAC5D011996D6A500535C95 /* Main.storyboard in Resources */,
 				BDAC5D031996D6A500535C95 /* Images.xcassets in Resources */,
 			);
@@ -479,6 +491,7 @@
 				BDAC5D001996D6A500535C95 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -567,7 +580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = SoundCloudPlayer/Info.plist;
+				INFOPLIST_FILE = "SoundCloudPlayer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -579,7 +592,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				INFOPLIST_FILE = SoundCloudPlayer/Info.plist;
+				INFOPLIST_FILE = "SoundCloudPlayer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -598,7 +611,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SoundCloudPlayerTests/Info.plist;
+				INFOPLIST_FILE = "SoundCloudPlayerTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -614,7 +627,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SoundCloudPlayerTests/Info.plist;
+				INFOPLIST_FILE = "SoundCloudPlayerTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -635,7 +648,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SoundCloudViews/Info.plist;
+				INFOPLIST_FILE = "SoundCloudPlayer/Views/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
@@ -657,7 +670,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = SoundCloudViews/Info.plist;
+				INFOPLIST_FILE = "SoundCloudPlayer/Views/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
@@ -680,7 +693,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SoundCloudViewsTests/Info.plist;
+				INFOPLIST_FILE = "SoundCloudViewsTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -695,7 +708,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = SoundCloudViewsTests/Info.plist;
+				INFOPLIST_FILE = "SoundCloudViewsTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
