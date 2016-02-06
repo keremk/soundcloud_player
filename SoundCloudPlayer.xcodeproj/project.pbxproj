@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62805B88745642C9A5372BEA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E94EC1CEAB9846C8B5C1E5F7 /* libPods.a */; };
 		BDAC5CFA1996D6A500535C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CF91996D6A500535C95 /* AppDelegate.swift */; };
 		BDAC5CFC1996D6A500535C95 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CFB1996D6A500535C95 /* FirstViewController.swift */; };
 		BDAC5CFE1996D6A500535C95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */; };
@@ -74,7 +73,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BC13E22D805744F48BC59263 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BDAC5CF41996D6A500535C95 /* SoundCloudPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDAC5CF81996D6A500535C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDAC5CF91996D6A500535C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		BDFA3B2419A12BC70027F794 /* SoundCloudClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudClient.swift; sourceTree = "<group>"; };
 		BDFA3B2619A13D850027F794 /* secret_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = secret_keys.plist; sourceTree = "<group>"; };
 		BDFA3B2819A1535A0027F794 /* SoundInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundInfo.swift; sourceTree = "<group>"; };
-		E94EC1CEAB9846C8B5C1E5F7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +105,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDAC5D311997DBC400535C95 /* SoundCloudViews.framework in Frameworks */,
-				62805B88745642C9A5372BEA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,14 +132,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0937698C17B46F59F5896DF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E94EC1CEAB9846C8B5C1E5F7 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		BDAC5CEB1996D6A500535C95 = {
 			isa = PBXGroup;
 			children = (
@@ -153,8 +141,6 @@
 				BDAC5D1E1997DBC400535C95 /* SoundCloudViews */,
 				BDAC5D2A1997DBC400535C95 /* SoundCloudViewsTests */,
 				BDAC5CF51996D6A500535C95 /* Products */,
-				BC13E22D805744F48BC59263 /* Pods.xcconfig */,
-				A0937698C17B46F59F5896DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,12 +268,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDAC5D121996D6A600535C95 /* Build configuration list for PBXNativeTarget "SoundCloudPlayer" */;
 			buildPhases = (
-				2AB0AC75F14E401D95496795 /* Check Pods Manifest.lock */,
 				BDAC5CF01996D6A500535C95 /* Sources */,
 				BDAC5CF11996D6A500535C95 /* Frameworks */,
 				BDAC5CF21996D6A500535C95 /* Resources */,
 				BDAC5D381997DBC400535C95 /* Embed Frameworks */,
-				2A51D7FDB70C40CBBD4F5044 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -433,39 +417,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2A51D7FDB70C40CBBD4F5044 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2AB0AC75F14E401D95496795 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BDAC5CF01996D6A500535C95 /* Sources */ = {
@@ -624,7 +575,6 @@
 		};
 		BDAC5D131996D6A600535C95 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC13E22D805744F48BC59263 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -636,7 +586,6 @@
 		};
 		BDAC5D141996D6A600535C95 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC13E22D805744F48BC59263 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
