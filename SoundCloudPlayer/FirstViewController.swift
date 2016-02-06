@@ -9,6 +9,7 @@
 import UIKit
 import SoundCloudViews
 
+
 class FirstViewController: UIViewController {
                             
   @IBOutlet weak var waveformView: WaveformView!

@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2AF656881C663A9E0074D882 /* PureLayout in Resources */ = {isa = PBXBuildFile; fileRef = 2AF656871C663A9E0074D882 /* PureLayout */; };
+		2AF6569B1C66426D0074D882 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF656931C66426D0074D882 /* ALView+PureLayout.m */; };
+		2AF6569C1C66426D0074D882 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF656951C66426D0074D882 /* NSArray+PureLayout.m */; };
+		2AF6569D1C66426D0074D882 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF656971C66426D0074D882 /* NSLayoutConstraint+PureLayout.m */; };
 		BDAC5CFA1996D6A500535C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CF91996D6A500535C95 /* AppDelegate.swift */; };
 		BDAC5CFC1996D6A500535C95 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CFB1996D6A500535C95 /* FirstViewController.swift */; };
 		BDAC5CFE1996D6A500535C95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */; };
@@ -72,7 +74,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2AF656871C663A9E0074D882 /* PureLayout */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PureLayout; sourceTree = "<group>"; };
+		2AF656891C66402C0074D882 /* SoundCloudPlayer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundCloudPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
+		2AF656921C66426D0074D882 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
+		2AF656931C66426D0074D882 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
+		2AF656941C66426D0074D882 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		2AF656951C66426D0074D882 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		2AF656961C66426D0074D882 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		2AF656971C66426D0074D882 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		2AF656981C66426D0074D882 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout.h; sourceTree = "<group>"; };
+		2AF656991C66426D0074D882 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
+		2AF6569A1C66426D0074D882 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
 		BDAC5CF41996D6A500535C95 /* SoundCloudPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDAC5CF81996D6A500535C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDAC5CF91996D6A500535C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,9 +144,25 @@
 		2AF656861C663A840074D882 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				2AF656871C663A9E0074D882 /* PureLayout */,
+				2AF656911C66425A0074D882 /* PureLayout */,
 			);
 			path = Libraries;
+			sourceTree = "<group>";
+		};
+		2AF656911C66425A0074D882 /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				2AF656921C66426D0074D882 /* ALView+PureLayout.h */,
+				2AF656931C66426D0074D882 /* ALView+PureLayout.m */,
+				2AF656941C66426D0074D882 /* NSArray+PureLayout.h */,
+				2AF656951C66426D0074D882 /* NSArray+PureLayout.m */,
+				2AF656961C66426D0074D882 /* NSLayoutConstraint+PureLayout.h */,
+				2AF656971C66426D0074D882 /* NSLayoutConstraint+PureLayout.m */,
+				2AF656981C66426D0074D882 /* PureLayout.h */,
+				2AF656991C66426D0074D882 /* PureLayout+Internal.h */,
+				2AF6569A1C66426D0074D882 /* PureLayoutDefines.h */,
+			);
+			name = PureLayout;
 			sourceTree = "<group>";
 		};
 		BDAC5CEB1996D6A500535C95 = {
@@ -179,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				BDAC5CF81996D6A500535C95 /* Info.plist */,
+				2AF656891C66402C0074D882 /* SoundCloudPlayer-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -388,7 +416,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2AF656881C663A9E0074D882 /* PureLayout in Resources */,
 				BDAC5D011996D6A500535C95 /* Main.storyboard in Resources */,
 				BDAC5D031996D6A500535C95 /* Images.xcassets in Resources */,
 			);
@@ -423,7 +450,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDAC5CFE1996D6A500535C95 /* SecondViewController.swift in Sources */,
+				2AF6569B1C66426D0074D882 /* ALView+PureLayout.m in Sources */,
 				BDFA3B2919A1535A0027F794 /* SoundInfo.swift in Sources */,
+				2AF6569D1C66426D0074D882 /* NSLayoutConstraint+PureLayout.m in Sources */,
+				2AF6569C1C66426D0074D882 /* NSArray+PureLayout.m in Sources */,
 				BDAC5CFA1996D6A500535C95 /* AppDelegate.swift in Sources */,
 				BDAC5CFC1996D6A500535C95 /* FirstViewController.swift in Sources */,
 				BDFA3B2519A12BC70027F794 /* SoundCloudClient.swift in Sources */,
@@ -582,6 +612,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundCloudPlayer/Supporting Files/SoundCloudPlayer-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -594,6 +625,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CodingVentures.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundCloudPlayer/Supporting Files/SoundCloudPlayer-Bridging-Header.h";
 			};
 			name = Release;
 		};
