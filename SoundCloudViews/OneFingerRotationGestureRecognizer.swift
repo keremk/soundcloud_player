@@ -10,43 +10,43 @@ import UIKit
 import UIKit.UIGestureRecognizerSubclass
 
 public class OneFingerRotationGestureRecognizer: UIGestureRecognizer {
-  public var rotationAngle:Float = 0.0
-
-  override public func touchesBegan(touches: NSSet!, withEvent event: UIEvent) {
-    if event.touchesForGestureRecognizer(self).count > 1 {
-      state = UIGestureRecognizerState.Failed
-    }
-  }
-  
-  override public func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
-    if self.state == .Possible {
-      state = .Began
-    } else {
-      state = .Changed
-    }
-  
-    let touch:UITouch = touches.anyObject() as UITouch
-    let center = CGPoint(x: view.bounds.midX, y:view.bounds.midY)
-    let curTouchPoint = touch.locationInView(view)
-    let prevTouchPoint = touch.previousLocationInView(view)
+    public var rotationAngle:Float = 0.0
     
-    let curCenterDistY = Float(curTouchPoint.y - center.y)
-    let curCenterDistX = Float(curTouchPoint.x - center.x)
-    let prevCenterDistY = Float(prevTouchPoint.y - center.y)
-    let prevCenterDistX = Float(prevTouchPoint.x - center.x)
-    
-    rotationAngle = atan2f(curCenterDistY, curCenterDistX) - atan2f(prevCenterDistY, prevCenterDistX)
-  }
-
-  override public func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
-    if state == .Changed {
-      state = .Ended
-    } else {
-      state = .Failed
+    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
+        if event.touchesForGestureRecognizer(self)!.count > 1 {
+            state = UIGestureRecognizerState.Failed
+        }
     }
-  }
-  
-  override public func touchesCancelled(touches: NSSet!, withEvent event: UIEvent!) {
-    state = .Failed
-  }
+    
+    public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent) {
+        if self.state == .Possible {
+            state = .Began
+        } else {
+            state = .Changed
+        }
+        
+        let touch:UITouch = touches.first! as UITouch
+        let center = CGPoint(x: view!.bounds.midX, y:view!.bounds.midY)
+        let curTouchPoint = touch.locationInView(view)
+        let prevTouchPoint = touch.previousLocationInView(view)
+        
+        let curCenterDistY = Float(curTouchPoint.y - center.y)
+        let curCenterDistX = Float(curTouchPoint.x - center.x)
+        let prevCenterDistY = Float(prevTouchPoint.y - center.y)
+        let prevCenterDistX = Float(prevTouchPoint.x - center.x)
+        
+        rotationAngle = atan2f(curCenterDistY, curCenterDistX) - atan2f(prevCenterDistY, prevCenterDistX)
+    }
+    
+    public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
+        if state == .Changed {
+            state = .Ended
+        } else {
+            state = .Failed
+        }
+    }
+    
+    public override func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent) {
+        state = .Failed
+    }
 }

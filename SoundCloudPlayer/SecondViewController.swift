@@ -18,7 +18,7 @@ class SecondViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    var gestureRecognizer:OneFingerRotationGestureRecognizer = OneFingerRotationGestureRecognizer(target: self, action: Selector("handleRotationGesture:"))
+    let gestureRecognizer:OneFingerRotationGestureRecognizer = OneFingerRotationGestureRecognizer(target: self, action: Selector("handleRotationGesture:"))
     polarAreaView.addGestureRecognizer(gestureRecognizer)
     polarAreaView.userInteractionEnabled = true
   }
@@ -105,11 +105,11 @@ class SecondViewController: UIViewController {
 
   @IBAction func handleRotationGesture(sender: OneFingerRotationGestureRecognizer!) {
     let recognizer = sender as OneFingerRotationGestureRecognizer
-    var currentAngle:CGFloat = polarAreaView.highlightAngle
-    var newAngle:CGFloat = currentAngle + CGFloat(recognizer.rotationAngle)
+    let currentAngle:CGFloat = polarAreaView.highlightAngle
+    let newAngle:CGFloat = currentAngle + CGFloat(recognizer.rotationAngle)
     if newAngle <= CGFloat(2*M_PI) && newAngle >= 0 {
       polarAreaView.highlightAngle = newAngle
-      println("Time Elapsed: \(polarAreaView.timeElapsed)")
+      print("Time Elapsed: \(polarAreaView.timeElapsed)")
       timeLabel.text = polarAreaView.timeElapsed.formatAsTimeString()
     }
   }

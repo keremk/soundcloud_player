@@ -61,28 +61,28 @@ public class PolarAreaView: UIView {
   override public func layoutSubviews() {
     super.layoutSubviews()
 
-    if !polarAreaPath {
+    if (polarAreaPath == nil) {
       polarAreaPath = calculatePolarAreaPath()
     }
     
-    if !maskPath {
+    if (maskPath == nil) {
       maskPath = calculateMaskPath()
     }
 
-    if !polarAreaLayer {
+    if (polarAreaLayer == nil) {
       polarAreaLayer = CAShapeLayer()
       layer.addSublayer(polarAreaLayer)
       polarAreaLayer.frame = layer.bounds
       layer.masksToBounds = true
     }
     
-    if !highlightedPolarLayer {
+    if (highlightedPolarLayer == nil) {
       highlightedPolarLayer = CAShapeLayer()
       layer.addSublayer(highlightedPolarLayer)
       highlightedPolarLayer.frame = layer.bounds
     }
     
-    if !maskLayer {
+    if (maskLayer == nil) {
       maskLayer = CAShapeLayer()
     }
     
@@ -90,12 +90,12 @@ public class PolarAreaView: UIView {
   }
 
   func updateLayerProperties() {
-    if polarAreaLayer {
+    if (polarAreaLayer != nil) {
       polarAreaLayer.path = polarAreaPath.CGPath
       polarAreaLayer.fillColor = nonHighlightedColor.CGColor
     }
     
-    if highlightedPolarLayer {
+    if (highlightedPolarLayer != nil) {
       highlightedPolarLayer.path = polarAreaPath.CGPath
       highlightedPolarLayer.fillColor = highlightedColor.CGColor
       maskLayer.path = maskPath.CGPath
@@ -125,7 +125,7 @@ public class PolarAreaView: UIView {
     let sliceAngle: CGFloat = CGFloat(2.0 * M_PI / Double(radii.count))
     let center:CGPoint = centerPoint(boundsRect)
     
-    var fullPath = UIBezierPath()
+    let fullPath = UIBezierPath()
     var shouldBreak = false
     for radius in radii {
       let adjustedRadius = CGFloat(radius * maxDiameter(boundsRect) / 2.0)
@@ -150,7 +150,7 @@ public class PolarAreaView: UIView {
   }
   
   func createSlice(startAngle: CGFloat, endAngle: CGFloat, radius: CGFloat, center:CGPoint) -> UIBezierPath {
-    var path = UIBezierPath()
+    let path = UIBezierPath()
 
     path.moveToPoint(center)
     let firstPointX = radius * cos(startAngle) + center.x;
