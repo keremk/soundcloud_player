@@ -199,10 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				2AF6569E1C66452F0074D882 /* Controllers */,
-				2AF656861C663A840074D882 /* Libraries */,
 				BDFA3B2319A129BC0027F794 /* Models */,
-				BDAC5CF71996D6A500535C95 /* Supporting Files */,
 				BDAC5D1E1997DBC400535C95 /* Views */,
+				BDAC5CF71996D6A500535C95 /* Supporting Files */,
+				2AF656861C663A840074D882 /* Libraries */,
 				BDAC5CF91996D6A500535C95 /* AppDelegate.swift */,
 				BDAC5D021996D6A500535C95 /* Images.xcassets */,
 				BDAC5CFF1996D6A500535C95 /* Main.storyboard */,
