@@ -94,7 +94,6 @@
 		BDB24708199D1BD700A806F0 /* PolarAreaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarAreaView.swift; sourceTree = "<group>"; };
 		BDFA3B1E19A052DF0027F794 /* OneFingerRotationGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneFingerRotationGestureRecognizer.swift; sourceTree = "<group>"; };
 		BDFA3B2419A12BC70027F794 /* SoundCloudClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundCloudClient.swift; sourceTree = "<group>"; };
-		BDFA3B2619A13D850027F794 /* secret_keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = secret_keys.plist; sourceTree = "<group>"; };
 		BDFA3B2819A1535A0027F794 /* SoundInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -180,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				BDAC5CF81996D6A500535C95 /* Info.plist */,
-				BDFA3B2619A13D850027F794 /* secret_keys.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
