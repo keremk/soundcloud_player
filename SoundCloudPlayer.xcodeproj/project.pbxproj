@@ -75,15 +75,15 @@
 
 /* Begin PBXFileReference section */
 		2AF656891C66402C0074D882 /* SoundCloudPlayer-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SoundCloudPlayer-Bridging-Header.h"; sourceTree = "<group>"; };
-		2AF656921C66426D0074D882 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
-		2AF656931C66426D0074D882 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ALView+PureLayout.m"; path = "PureLayout/ALView+PureLayout.m"; sourceTree = "<group>"; };
-		2AF656941C66426D0074D882 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
-		2AF656951C66426D0074D882 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
-		2AF656961C66426D0074D882 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
-		2AF656971C66426D0074D882 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
-		2AF656981C66426D0074D882 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout.h; sourceTree = "<group>"; };
-		2AF656991C66426D0074D882 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
-		2AF6569A1C66426D0074D882 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
+		2AF656921C66426D0074D882 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		2AF656931C66426D0074D882 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		2AF656941C66426D0074D882 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		2AF656951C66426D0074D882 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		2AF656961C66426D0074D882 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		2AF656971C66426D0074D882 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		2AF656981C66426D0074D882 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		2AF656991C66426D0074D882 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		2AF6569A1C66426D0074D882 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		BDAC5CF41996D6A500535C95 /* SoundCloudPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundCloudPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDAC5CF81996D6A500535C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDAC5CF91996D6A500535C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -158,11 +158,20 @@
 				2AF656951C66426D0074D882 /* NSArray+PureLayout.m */,
 				2AF656961C66426D0074D882 /* NSLayoutConstraint+PureLayout.h */,
 				2AF656971C66426D0074D882 /* NSLayoutConstraint+PureLayout.m */,
-				2AF656981C66426D0074D882 /* PureLayout.h */,
 				2AF656991C66426D0074D882 /* PureLayout+Internal.h */,
+				2AF656981C66426D0074D882 /* PureLayout.h */,
 				2AF6569A1C66426D0074D882 /* PureLayoutDefines.h */,
 			);
-			name = PureLayout;
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
+		2AF6569E1C66452F0074D882 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BDAC5CFB1996D6A500535C95 /* FirstViewController.swift */,
+				BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		BDAC5CEB1996D6A500535C95 = {
@@ -189,15 +198,14 @@
 		BDAC5CF61996D6A500535C95 /* SoundCloudPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				2AF6569E1C66452F0074D882 /* Controllers */,
 				2AF656861C663A840074D882 /* Libraries */,
 				BDFA3B2319A129BC0027F794 /* Models */,
 				BDAC5CF71996D6A500535C95 /* Supporting Files */,
 				BDAC5D1E1997DBC400535C95 /* Views */,
 				BDAC5CF91996D6A500535C95 /* AppDelegate.swift */,
-				BDAC5CFB1996D6A500535C95 /* FirstViewController.swift */,
 				BDAC5D021996D6A500535C95 /* Images.xcassets */,
 				BDAC5CFF1996D6A500535C95 /* Main.storyboard */,
-				BDAC5CFD1996D6A500535C95 /* SecondViewController.swift */,
 			);
 			path = SoundCloudPlayer;
 			sourceTree = "<group>";
